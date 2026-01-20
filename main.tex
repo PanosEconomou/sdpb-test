@@ -4,5 +4,14 @@
 
 \begin{document}
 \maketitle
-\problem[1]
+\problem[1 | Intro]
+
+Studying $(\beta\partial)^n$ we can obtain that
+\begin{equation*}
+	(\beta\partial)^n = \sum_{k=1}^{n} S^n_k \beta^k \partial^k,
+\end{equation*}
+where $S^{n}_{k}$ is the number of partitions of a set of $n$ elements into $k$ disjoint subsets. To show this we do some combinatorics. Effectively we want to expand $\parital (\beta \partial(\beta \cdots \partial (\beta \partial f)))$ for some function $f(\beta)$ in terms of $f^{(k)}(\beta)$. Using product rule we know that the coefficient multiplying $f^{(k)}$ is going to be $\parital (\beta \partial(\beta \cdots \partial (\beta)))$ with $k$ of the partials missing. Now we have $n-1$ positions to place $n-k$ partials in the string above, and if one is placed at position $1\leq i\leq n-1$ then it can act only to the $n-i$ remaining $\beta$'s. 
+
+We can depict this pictorially using two sets of dots 
+
 \end{document}
