@@ -10,8 +10,35 @@ Studying $(\beta\partial)^n$ we can obtain that
 \begin{equation*}
 	(\beta\partial)^n = \sum_{k=1}^{n} S^n_k \beta^k \partial^k,
 \end{equation*}
-where $S^{n}_{k}$ is the number of partitions of a set of $n$ elements into $k$ disjoint subsets. To show this we do some combinatorics. Effectively we want to expand $\parital (\beta \partial(\beta \cdots \partial (\beta \partial f)))$ for some function $f(\beta)$ in terms of $f^{(k)}(\beta)$. Using product rule we know that the coefficient multiplying $f^{(k)}$ is going to be $\parital (\beta \partial(\beta \cdots \partial (\beta)))$ with $k$ of the partials missing. Now we have $n-1$ positions to place $n-k$ partials in the string above, and if one is placed at position $1\leq i\leq n-1$ then it can act only to the $n-i$ remaining $\beta$'s. 
+where $S^{n}_{k}$ is the number of partitions of a set of $n$ elements into $k$ disjoint subsets.
 
-We can depict this pictorially using two sets of dots 
+To show this we do some combinatorics. Effectively we want to expand $\beta \partial (\beta \partial(\beta \cdots \partial (\beta \partial f)))$ for some function $f(\beta)$ in terms of $f^{(k)}(\beta)$. Using product rule we know that the coefficient multiplying $f^{(k)}$ is going to be $\beta \partial (\beta \partial(\beta \cdots \partial (\beta)))$ with $k$ of the partials missing. Now we have $n-1$ positions to place $n-k$ partials in the string above, and if one is placed at position $1\leq i\leq n-1$ then it can act only to the $n-i$ remaining $\beta$'s. 
 
+We can depict this pictorially using two sets of dots one set for the available position to place the $\partial$ and another for each $\beta$ that the $\partial$ can act on. Fig.~\ref{fig:dots} shows a representation of one of the terms in the product rule expansion when we place two derivatives on the first two slots.
+\begin{figure}[h]
+     \centering
+     \includegraphics[width=0.5\linewidth]{dots}
+	 \caption{\textit{Connecting the dots. The bottom dots represent places in the $\beta \partial (\beta \partial(\beta \cdots \partial (\beta)))$ string where $\partial$ can be placed, while the top dots represent the $\beta$ that are there. A connected line means that a corresponding $\partial$ acts on that particular $\beta$. The particular configuration corresponds to the term in the expansion with two derivates acting like so $\beta (\partial \beta) \beta (\partial \beta) \cdots \beta$.}}
+     \label{fig:dots}
+\end{figure}
+
+Alternatively we can consider this as a set of $n$ elements with $n-k$ possible connections. The connectionspartition that set of points into $n-(n-k + 1) + 1 = k$ subsets, and each subset partition corresponds to exactly one term in the product rule expansion of the coefficient in front of $f^{(k)}$, therefore each term will be multiplied by the number of partitions of a set of $n$ elements into $k$ subsets, $S^n_k$.
+
+Now the hard part is done. Using the fact that $\partial^{k} e^{-\beta H} = (-H)^{k}e^{-\beta H}$ we can conclude that 
+\begin{align*}
+	\alpha(Z(\beta)) = \text{Tr\,}\sum_{n=0}^{N} \alpha_n e^{-\beta H}\sum_{k=1}^{n} (-\beta H)^{k} S^{n}_{k} = \text{Tr\,} e^{-\beta H}\sum_{n=0}^{\lfloor\frac{N}{2}\rfloor} \alpha_{2n} T^n(-\beta H) + e^{-\beta H}\sum_{n=0}^{\lfloor\frac{N}{2}\rfloor} \alpha_{2n+1} T^n(-\beta H).
+\end{align*}
+If we call $\tilde \beta = \frac{4\pi^2}{\beta}$ we know that $Z(\beta) = Z(\tilde \beta)$ and that $\beta \partial = -\tilde \beta \tilde \partial$ plugging these two equations we have that 
+\begin{align*}
+	\alpha(Z(\beta)) = \alpha(Z(\tilde \beta)) = \text{Tr\,} e^{-\tilde\beta H}\sum_{n=0}^{\lfloor\frac{N}{2}\rfloor} (-1)^{2n} \alpha_{2n} T^n(-\tilde\beta H) + e^{-\tilde\beta H}\sum_{n=0}^{\lfloor\frac{N}{2}\rfloor} (-1)^{2n+1} \alpha_{2n+1} T^n(-\tilde\beta H).
+\end{align*}
+Subtracting the two expressions for $\beta = 2\pi = \tilde \beta$ we conclude that
+\begin{align*}
+	\text{Tr\,}\alpha(H) e^{-2\pi H} = \text{Tr\,}\sum_{n=0}^{\lfloor\frac{N}{2}\rfloor} (-1)^{2n+1} \alpha_{2n+1} T^n(-2\pi H)e^{-2\pi H} = 0.
+\end{align*}
+Finally using the fact that $\det e^{A} = e^{\text{tr\,}A}$ we can refine this expression to
+\begin{equation*}
+    \text{Tr\,}\alpha(H) = -Z(2\pi),
+\end{equation*}
+which is different form what the problem set we should get, but the rest of the considerations must be fine. Still if $\alpha(E) > 0$ for all allowed $E$ then the theory is excluded.
 \end{document}
