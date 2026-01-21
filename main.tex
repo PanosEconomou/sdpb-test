@@ -1,5 +1,5 @@
 \documentclass{homework}
-\title{Assignment}
+\title{SDPB Training}
 \author{Panos Oikonomou}
 
 \begin{document}
@@ -41,4 +41,7 @@ Finally using the fact that $\det e^{A} = e^{\text{tr\,}A}$ we can refine this e
     \text{Tr\,}\alpha(H) = -Z(2\pi),
 \end{equation*}
 which is different form what the problem set we should get, but the rest of the considerations must be fine. Still if $\alpha(E) > 0$ for all allowed $E$ then the theory is excluded.
+\problem*[2 | Implementation]
+%We can see that $\alpha(E) = \sum_{n=0}^{\lfloor \frac{N}{2} \rfloor} \alpha_n T^n(-2\pi E)$
+We know that a spectrum for a CFT is not valid if we can find a functional $\alpha$ such that $\text{Tr\,}\alpha(H) \geq 0$. So we can solve the optimization problem for $\alpha$ constraining all energies above the ground to give positive contributions, and solve for what the maximum $\alpha(E_0)$ is. If it positive then we have found a functional that contradicts the assertion above and then we can reject that spectrum. 
 \end{document}
