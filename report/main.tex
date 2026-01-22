@@ -44,4 +44,6 @@ which is different form what the problem set we should get, but the rest of the 
 \problem*[2 | Implementation]
 %We can see that $\alpha(E) = \sum_{n=0}^{\lfloor \frac{N}{2} \rfloor} \alpha_n T^n(-2\pi E)$
 We know that a spectrum for a CFT is not valid if we can find a functional $\alpha$ such that $\text{Tr\,}\alpha(H) \geq 0$. So we can solve the optimization problem for $\alpha$ constraining all energies above the ground to give positive contributions, and solve for what the maximum $\alpha(E_0)$ is. If it positive then we have found a functional that contradicts the assertion above and then we can reject that spectrum. 
+
+However, one can notice quickly that a possible solution to this problem, as stated in the original document, is to take $\alpha_n = 0$ for all $n$. Therefore, sdpb should always be able to find a polynomial that doesn't allow the theory to be rulled out. 
 \end{document}
